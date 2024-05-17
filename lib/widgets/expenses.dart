@@ -71,6 +71,12 @@ class _ExpensesState extends State<Expenses> {
     });
   }
 
+  void _removeExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.remove(expense);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -90,7 +96,7 @@ class _ExpensesState extends State<Expenses> {
           const Text('The chart loll'),
           Expanded(
             // Expanded to take all the available space in the Expenses widget
-            child: ExpensesList(expenses: _registeredExpenses),
+            child: ExpensesList(expenses: _registeredExpenses, onRemoveExpense: _removeExpense,),
           ) 
         ],
       ),
