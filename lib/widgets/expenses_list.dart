@@ -19,11 +19,19 @@ class ExpensesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    
+
     // build lisetView create only when we create or use this class and we don't know how big this list to be
     return ListView.builder(
       itemCount: expenses.length,
       itemBuilder: (ctx, index) => Dismissible(
         key: ValueKey(expenses[index]),
+        // if we swiping item we change color 
+        background: Container(
+          color: Theme.of(context).colorScheme.error.withOpacity(0.75), //opacity faded bg
+          margin: Theme.of(context).cardTheme.margin,
+          ),
         onDismissed: (direction) {
           onRemoveExpense(expenses[index]);
         },
