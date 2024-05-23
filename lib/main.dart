@@ -4,13 +4,36 @@ import 'package:trackerapp/widgets/expenses.dart';
 // this is chacnge color and setting in all applicatino
 
 var kColorScheme = ColorScheme.fromSeed(
-  seedColor: Color.fromARGB(255, 234, 21, 230)
+  seedColor: const Color.fromARGB(255, 234, 21, 230)
   );
+
+var kDartColorScheme = ColorScheme.fromSeed(
+  brightness: Brightness.dark,
+  seedColor: const Color.fromARGB(255, 81, 6, 80)
+);
 
 void main() {
 
   runApp(
     MaterialApp(
+
+      // this all setting dart color change with system
+      darkTheme: ThemeData.dark().copyWith(
+        colorScheme: kDartColorScheme,
+
+        cardTheme: const CardTheme().copyWith(
+            color: kDartColorScheme.secondaryContainer,
+            margin: const EdgeInsets.all(16),
+          ),
+
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: kDartColorScheme.primaryContainer,
+                foregroundColor: kDartColorScheme.onPrimaryContainer,
+              ),
+            ),
+
+      ),
       theme:
         ThemeData(
           useMaterial3: true,
@@ -41,7 +64,9 @@ void main() {
 
             ),
         ),
-        
+
+        themeMode: ThemeMode.system,
+
       home: const Expenses(),
     )
   );

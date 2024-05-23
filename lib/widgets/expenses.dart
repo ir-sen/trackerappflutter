@@ -1,6 +1,6 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:trackerapp/chart/chart.dart';
 import 'package:trackerapp/new_expense.dart';
 import 'package:trackerapp/widgets/expenses_list.dart';
 
@@ -128,7 +128,7 @@ class _ExpensesState extends State<Expenses> {
       body: Column(
         // The widgets to show inside the Expenses widget
         children:  [
-          const Text('The chart loll'),
+          Chart(expenses: _registeredExpenses),
           Expanded(
             // Expanded to take all the available space in the Expenses widget
             child: mainContent,

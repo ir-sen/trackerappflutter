@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
 import 'package:trackerapp/models/expense.dart';  
 
 class NewExpense extends StatefulWidget {
@@ -12,7 +10,6 @@ class NewExpense extends StatefulWidget {
   
   @override
   State<NewExpense> createState() {
-    // TODO: implement createState
     return _NewExpenseState();
   }
 
@@ -36,7 +33,7 @@ class _NewExpenseState extends State<NewExpense> {
       lastDate: now,
       initialDate: now
     );
-    print(pickedDate);
+    // print(pickedDate);
 
     setState(() {
       _selectedDate = pickedDate; 
@@ -198,7 +195,7 @@ class _NewExpenseState extends State<NewExpense> {
       ],
       ),  
     );
-    // TODO: implement build
+
 
 
   }
